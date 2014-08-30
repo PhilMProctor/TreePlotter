@@ -22,6 +22,10 @@ var/
 .installed.cfg
 *.egg
 
+# GAE Installations
+google_appengine/
+Python-2.7.6/
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

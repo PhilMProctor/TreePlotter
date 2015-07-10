@@ -1,0 +1,17 @@
+.postcard {
+display: inline-block;
+	  position: relative;
+	  top: 5px;
+  	  left: 20px;
+      background-color: #ba68c8;
+      padding: 25px;
+      width: 80%;
+      font-size: 1.2rem;
+      font-weight: 300;
+	  margin: 1em;
+}
+
+.btn-start {
+  color: #fff;
+  background-color: #64b5f6;
+  border-color: #4cae4c;

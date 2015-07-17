@@ -10,6 +10,7 @@
 
     <title>TreePlotter</title>
 	<link type="text/css" rel="stylesheet" href="static/css/ghpage-materialize.css"  media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
   </head>
 <header>
@@ -25,11 +26,35 @@
 	</div>
       <ul id="nav-mobile" class="side-nav fixed" style="width: 240px">
         <li class="logo"><a id="logo-container" href="/" class="brand-logo">
-        <object id="front-page-logo" type="image/svg+xml" data="static/images/logo.svg">Your browser does not support SVG</object></a></li>
+        <object id="front-page-logo" type="image/svg+xml" data="static/images/treeplotter.svg">Your browser does not support SVG</object></a></li>
         <li class="bold"><a href="#">About</a></li>
-        <!--<li class="bold"><a href="#">Getting Started</a></li>
-        <li class="bold"><a href="monitors">Monitors</a></li>
-        <li class="bold"><a href="settings">Settings</a></li>-->
+        <li class="bold"><a href="#">Getting Started</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-green">Plot Tasks</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="#">Add a Plot</a></li>
+                  <li><a href="#">Update a Plot</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-green">Admin</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="admin/species">Manage Species</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="bold"><a href="#">Map</a></li>
+        <li class="bold"><a href="#">Stats</a></li>
+        <li class="bold"><a href="#">Settings</a></li>
       </ul>
 </header>
 	<main>

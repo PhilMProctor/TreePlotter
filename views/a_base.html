@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Phil" >
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>TreePlotter</title>
+	<link type="text/css" rel="stylesheet" href="../static/css/ghpage-materialize.css"  media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+  </head>
+<header>
+	<nav class="top-nav">
+      <div class="container">
+        <div class="nav-wrapper"><a class="page-title">TreePlotter</a></div>
+      </div>
+  </nav>
+	<div class="container">
+		<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full">
+		  <i class="mdi-navigation-menu"></i>
+		</a>
+	</div>
+      <ul id="nav-mobile" class="side-nav fixed" style="width: 240px">
+        <li class="logo"><a id="logo-container" href="/" class="brand-logo">
+        <object id="front-page-logo" type="image/svg+xml" data="../static/images/treeplotter.svg">Your browser does not support SVG</object></a></li>
+        <li class="bold"><a href="#">About</a></li>
+        <li class="bold"><a href="#">Getting Started</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-green">Plot Tasks</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="#">Add a Plot</a></li>
+                  <li><a href="#">Update a Plot</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-green">Admin</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="admin/species">Manage Species</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="bold"><a href="#">Map</a></li>
+        <li class="bold"><a href="#">Stats</a></li>
+        <li class="bold"><a href="#">Settings</a></li>
+      </ul>
+</header>
+	<main>
+		<div class="container">
+  		<div class="row">
+				{% block content %}
+				{% endblock content %}
+			</div>
+		</div>
+	</main>
+<footer class="footer"><p>&copy; Techno-Talk 2015</p></footera>
+<!-- Bootstrap core JavaScriptt
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../static/js/materialize.js"></script>
+	<script type="text/javascript" src="../static/js/init.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript" src="../static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

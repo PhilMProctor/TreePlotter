@@ -1,0 +1,64 @@
+{% extends "a_base.html" %} 
+{% block content %}
+<div class="container">
+	<div class="row">
+		<ul class="collapsible" data-collapsible="accordion">
+		    <li>
+			    <div class="collapsible-header"><i class="material-icons">library_add</i>Add a Species</div>
+			    <div class="collapsible-body">
+			    	<form class="col s12" action="" method="post">
+						<div class="row">
+							<div class="input-field col s12">
+								<input name ="speciesName" id="speciesName" type="text" class="validate">
+								<label for="speciesName">Species Name</label>
+							</div>
+						</div>
+						<div class="row">
+						<div class="input-field col s6">
+								<input name="treeType" type="radio" id="Deciduous" value="Deciduous" />
+								<label for="Deciduous">Deciduous</label>
+						</div>
+						<div class="input-field col s6">
+								<input name="treeType" type="radio" id="Evergreen" value="Evergreen" />
+								<label for="Evergreen">Evergreen</label>
+						</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+							  <textarea name ="treeDesc" id="treeDesc" class="materialize-textarea"></textarea>
+							  <label for="treeDesc">Description</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input name="leafPic" id="leafPic" type="text" class="validate">
+								<label for="leafPic">Leaf Picture Name</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input name="fruitPic" id="fruitPic" type="text" class="validate">
+								<label for="fruitPic">Fruit Picture Name</label>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-success">Save</button>
+					</form>
+			    </div>
+		    </li>
+		    <li>
+				<div class="collapsible-header"><i class="material-icons">library_books</i>Tree Species</div>
+				<div class="collapsible-body">
+				{% for species in speciesList %}
+				<div class="col s8">
+				{{species.speciesName}}
+				</div>
+				<div class="col s4">
+				<button>Edit</button>
+				</div>
+				{% endfor %}
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+{% endblock content %}.. 

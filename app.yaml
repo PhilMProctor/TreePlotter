@@ -2,7 +2,7 @@ application: treeplotter
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: no
+threadsafe: yes
 
 handlers:
 - url: /static
@@ -14,6 +14,18 @@ handlers:
 
 - url: .*
   script: main.app
+
+- url: /admin/.*
+  script: main.app
+  secure: always
+
+- url: /login
+  script: main.app
+  secure: always
+
+- url: /signup
+  script: main.app
+  secure: always
 
 libraries:
 - name: webapp2

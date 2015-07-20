@@ -25,23 +25,25 @@
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-							  <textarea name ="treeDesc" id="treeDesc" class="materialize-textarea"></textarea>
-							  <label for="treeDesc">Description</label>
+							<label for="treeDesc">Description</label>
+							<textarea name ="treeDesc" id="treeDesc" class="materialize-textarea"></textarea>
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s12">
-								<input name="leafPic" id="leafPic" type="text" class="validate">
-								<label for="leafPic">Leaf Picture Name</label>
-							</div>
-						</div>
+							<div class="input-field">
+            					<div class="btn"><span>Leaf</span></div>
+            					<input type="file">
+          					</div>
+          				</div>
 						<div class="row">
-							<div class="input-field col s12">
-								<input name="fruitPic" id="fruitPic" type="text" class="validate">
-								<label for="fruitPic">Fruit Picture Name</label>
-							</div>
+						<div class="input-field">
+            				<div class="btn"><span>Fruit</span></div>
+            					<input type="file">
+          					</div>
 						</div>
-						<button type="submit" class="btn btn-success">Save</button>
+						<button class="btn waves-effect waves-light" type="submit" class="btn btn-success">Save 
+						<i class="material-icons">send</i>
+						</button>
 					</form>
 			    </div>
 		    </li>
@@ -50,6 +52,7 @@
 				<div class="collapsible-body">
 				{% for species in speciesList %}
 				<div class="col s8">
+				<div class="divider"></div>
 				{{species.speciesName}}
 				</div>
 				<div class="col s4">

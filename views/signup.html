@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Register a new user{% endblock %}
+
+{% block content %}
+
+<link href="/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #669933;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }       
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+    <div class="form-signin">
+        <h3>Register a new user</h3>
+        <form action="/signup" method="POST">
+        <label for="name">First Name</label>
+        <input type="text" name="name" />
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" />
+        <label for="username">Username</label>
+        <input type="text" name="username" />
+        <label for="email">Email address</label>
+        <input type="text" name="email" />
+        <label for="password">Password</label>
+        <input type="password" name="password" />
+        <input type="submit" value="Create user" />
+        </form>
+    </div>
+
+{% endblock content %}

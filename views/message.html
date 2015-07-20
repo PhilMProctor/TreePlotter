@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+<div class="col-lg-6 col-lg-offset-3">
+<h4 class="text-danger">Your current role as a <b>{{role}}</b> does not have sufficient privileges to access this area</h4>
+<a href="/portal" class="btn btn-info">Return to Portal</a>
+</div>
+</div>
+{% endblock content %}

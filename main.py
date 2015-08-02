@@ -255,11 +255,9 @@ config = {
 # --- Main Page --- #
 class MainHandler(BaseHandler):
 	def get(self):
-		active_home = "active"
-		active_settings = ""
+		plotList = treePlot.query().order(treePlot.mDate) 
 		params = {
-		'active_home': active_home,
-		'active_settings': active_settings
+		'plotList': plotList,
 		}
 		self.render_template('index.html', params)
 
@@ -272,6 +270,15 @@ class SpeciesHandler(BaseHandler):
 		'speciesList': speciesList
 		}
 		self.render_template('species.html', params)
+		
+class PlotHandler(BaseHandler):
+	def get(self):
+		param_item =""
+		params = {
+		'para_item': para_item
+		}
+		self.render_template('plot.html', params)
+		
 
 
 	def post(self):

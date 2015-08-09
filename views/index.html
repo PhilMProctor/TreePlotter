@@ -19,7 +19,9 @@
 			<div class="card green darken-2">
 				<div class="card-content white-text activator">
 		            <span class="card-title">Recent Plots</span>
-					<p></p>
+													{% for plot in plotList %}
+													<p>{{plot.user}}</p>
+													{% endfor %}
 				</div>
 			</div>
 		</div>

@@ -10,7 +10,7 @@ from webapp2_extras import sessions
 from webapp2_extras.auth import InvalidAuthIdError
 from webapp2_extras.auth import InvalidPasswordError
 from webapp2_extras import security
-from models import treeSpecies, User
+from models import treeSpecies, User, treePlot
 
 def user_required(handler):
 	"""

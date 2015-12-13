@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block nav %}
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">TreePlotter</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/plot"><i class="material-icons left">location_on</i>Plot a Tree</a></li>
+        <li><a href="#">Tree Types</a></li>
+        <li><a href="#">Admin</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link1</a></li>
+        <li><a href="#">Navbar Link2</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  {% endblock nav %}
+  {% block content %}
+  {% endblock content %}

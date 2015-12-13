@@ -1,78 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Phil" >
-    <!--<link rel="icon" href="../../favicon.ico">-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>TreePlotter</title>
 
-    <title>TreePlotter</title>
-	<link type="text/css" rel="stylesheet" href="/static/css/ghpage-materialize.css"  media="screen,projection"/>
+  <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
-  </head>
-<header>
-	<nav class="top-nav">
-      <div class="container">
-        <div class="nav-wrapper"><a class="page-title">TreePlotter</a></div>
-      </div>
-  </nav>
-	<div class="container">
-		<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full">
-		  <i class="mdi-navigation-menu"></i>
-		</a>
-	</div>
-      <ul id="nav-mobile" class="side-nav fixed" style="width: 240px">
-        <li class="logo"><a id="logo-container" href="/" class="brand-logo">
-        <object id="front-page-logo" type="image/svg+xml" data="/static/images/treeplotter.svg">Your browser does not support SVG</object></a></li>
-        <li class="bold"><a href="#">About</a></li>
-        <li class="bold"><a href="#">Getting Started</a></li>
-        <li class="no-padding">
-          <ul class="collapsible collapsible-accordion">
-            <li class="bold"><a class="collapsible-header  waves-effect waves-green">Plot Tasks</a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="/plot">Add a Plot</a></li>
-                  <li><a href="#">Update a Plot</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li class="no-padding">
-          <ul class="collapsible collapsible-accordion">
-            <li class="bold"><a class="collapsible-header  waves-effect waves-green">Admin</a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="admin/species">Manage Species</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li class="bold"><a href="#">Map</a></li>
-        <li class="bold"><a href="#">Stats</a></li>
-        <li class="bold"><a href="#">Settings</a></li>
+  <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+ {% block nav %}
+ <ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Account</a></li>
+  <li><a href="#!">Profile</a></li>
+  <li class="divider"></li>
+  <li><a href="/logout">Log Out</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><a href="/login">Login</a></li>
+  <li><a href="#!">Register</a></li>
+  <li class="divider"></li>
+  <li><a href="/logout">About</a></li>
+</ul>
+
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/" class="brand-logo">TreePlotter</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/plot">Plot a Tree</a></li>
+        <li><a href="#">Tree Types</a></li>
+        {% if username %}
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{username}}<i class="material-icons right">arrow_drop_down</i></a></li>
+        {% else %}
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Sign In<i class="material-icons right">arrow_drop_down</i></a></li>
+        {% endif %}
       </ul>
-</header>
-	<main>
-		<div class="container">
-  		<div class="row">
-				{% block content %}
-				{% endblock content %}
-			</div>
-		</div>
-	</main>
-<footer class="footer"><p>&copy; Techno-Talk 2015</p></footera>
-<!-- Bootstrap core JavaScriptt
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="/static/js/materialize.js"></script>
-	<script type="text/javascript" src="/static/js/init.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script type="text/javascript" src="/static/js/ie10-viewport-bug-workaround.js"></script>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link1</a></li>
+        <li><a href="#">Navbar Link2</a></li>
+        {% if username %}
+        <li><a class="dropdown-button" href="#!" data-activates="activeU">{{username}}<i class="material-icons right">arrow_drop_down</i></a></li>
+        {% else %}
+        <li><a class="dropdown-button" href="#!" data-activates="newU">Sign In<i class="material-icons right">arrow_drop_down</i></a></li>
+        {% endif %}
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+ {% endblock nav %}
+
+{% block content %}
+{% endblock content %}
+
+{% block footer %}
+  <footer class="page-footer teal">
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="green-text text-lighten-3" href="#">Techno-Talk</a>
+      </div>
+    </div>
+  </footer>
+{%endblock footer%}
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/init.js"></script>
+
   </body>
 </html>

@@ -1,7 +1,7 @@
 TreePlotter
 ==========
 
-Tree mapping Application (Python)
+Tree Plotting Application (Python)
 
 ##Introduction
 

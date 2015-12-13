@@ -56,3 +56,7 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# Personal Settings
+datastore/
+*.zip
+_archive/

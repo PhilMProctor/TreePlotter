@@ -1,14 +1,14 @@
-{% extends "a_base.html" %} 
-{% block content %}
+{% extends "base.html" %} 
+{% block main_content %}
 <div class="container">
 	<div class="row">
 		<ul class="collapsible" data-collapsible="accordion">
 		    <li>
 			    <div class="collapsible-header"><i class="material-icons">library_add</i>Add a Species</div>
 			    <div class="collapsible-body">
-			    	<form class="col s12" action="" method="post">
+			    	<form class="col l6 m8 s12" action="" method="post">
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="input-field col s10">
 								<input name ="speciesName" id="speciesName" type="text" class="validate">
 								<label for="speciesName">Species Name</label>
 							</div>
@@ -24,7 +24,7 @@
 						</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="input-field col s10">
 							<label for="treeDesc">Description</label>
 							<textarea name ="treeDesc" id="treeDesc" class="materialize-textarea"></textarea>
 							</div>
@@ -64,4 +64,4 @@
 		</ul>
 	</div>
 </div>
-{% endblock content %}.. 
+{% endblock main_content %}.. 

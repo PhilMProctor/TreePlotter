@@ -1,30 +1,140 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
+
 {% block content %}
-<div class="container">
-	<div class="row">
-		<div class="col s12 m12">
-			<div class="card green darken-2">
-				<div class="card-content white-text activator">
-		            <span class="card-title">TreePlotter</span>
-					<p>TreePlotter is a site which helps plot details of trees in our local community.</p>
-					<br>
-					<p>A user of the site will be able to see a map of the trees based on type or location</p>
-					<p><strong>Coming soon to a park near you.</strong></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col s12 m12">
-			<div class="card green darken-2">
-				<div class="card-content white-text activator">
-		            <span class="card-title">Recent Plots</span>
-													{% for plot in plotList %}
-													<p>{{plot.user}}</p>
-													{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center white-text text-lighten-2">TreePlotter</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Almost every tree has its voice as well as its features ~ Thomas Hardy</h5>
+        </div>
+        <div class="row center">
+          <a href="#" id="download-button" class="btn-large waves-effect waves-light green lighten-1">Get Started</a>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="/static/images/landscape1.JPG" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center green-text"><i class="material-icons">location_on</i></h2>
+            <h5 class="center">Plot a Tree</h5>
+
+            <p class="light">You can plot details of trees in the site.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center green-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">Results Map</h5>
+
+            <p class="light">Trees which have been plotted can be viewed on a map. See whether you can see any patterns to the tree types and their locations.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center green-text"><i class="material-icons">insert_chart</i></h2>
+            <h5 class="center">Reports</h5>
+
+            <p class="light">A series of reports which show the number of trees in the town, the type and locations by ward.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/static/images/landscape1.JPG" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>About the App</h4>
+          <p class="left-align light">I've always been interested in the benefits my town has to offer.  Walking and running around the streets I have noticed many trees of varying types (species).  I decided to focus my interest in web and app development into this site.  From here you'll be able to help me plot the trees around our town.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/static/images/landscape1.JPG" alt="Unsplashed background img 3"></div>
+  </div>
 {% endblock content %}
+
+{% block footer %}
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Techo-Talk</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="green-text text-lighten-3" href="#">Techno-Talk</a>
+      </div>
+    </div>
+  </footer>
+{% endblock footer %}
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/init.js"></script>
+
+  </body>
+</html>

@@ -255,9 +255,13 @@ config = {
 # --- Main Page --- #
 class MainHandler(BaseHandler):
 	def get(self):
-		plotList = treePlot.query().order(treePlot.mDate) 
+		u = self.user_info
+		if u == None:
+			username = False
+		else:
+			username = u['name']
 		params = {
-		'plotList': plotList,
+		'username': username,
 		}
 		self.render_template('index.html', params)
 
@@ -270,16 +274,6 @@ class SpeciesHandler(BaseHandler):
 		'speciesList': speciesList
 		}
 		self.render_template('species.html', params)
-		
-class PlotHandler(BaseHandler):
-	def get(self):
-		param_item =""
-		params = {
-		'para_item': para_item
-		}
-		self.render_template('plot.html', params)
-		
-
 
 	def post(self):
 		tSpecies = treeSpecies(speciesName=self.request.get('speciesName'),
@@ -289,6 +283,23 @@ class PlotHandler(BaseHandler):
 		fruitPic=self.request.get('fruitPic'))
 		tSpecies.put()
 		return self.redirect('species')
+		
+class PlotHandler(BaseHandler):
+	def get(self):
+		param_item ="tree"
+		params = {
+		'param_item': param_item
+		}
+		self.render_template('plot.html', params)
+
+class StatsHandler(BaseHandler):
+	def get(self):
+		speciesNo = treeSpecies.query().count()
+		param_item =""
+		params = {
+		'speciesNo': speciesNo
+		}
+		self.render_template('stats.html', params)
 
 app = webapp2.WSGIApplication([
 	webapp2.Route('/signup', SignupHandler, name='signup'),
@@ -298,5 +309,7 @@ app = webapp2.WSGIApplication([
       handler=VerificationHandler, name='verification'),
 	webapp2.Route('/authenticated', AuthenticatedHandler, name='authenticated'),
 	webapp2.Route('/', MainHandler, name='home'),
-	webapp2.Route('/admin/species', SpeciesHandler, name='species')
+	webapp2.Route('/admin/species', SpeciesHandler, name='species'),
+	webapp2.Route('/stats', StatsHandler, name='stats'),
+	webapp2.Route('/plot', PlotHandler, name='plot')
 	], debug=True, config=config)

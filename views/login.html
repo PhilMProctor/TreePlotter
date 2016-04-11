@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>Login</h1>
-
-{% if failed %}
+<div class="container">
+  <div class="col l6 s12">
+<h2>Sign In</h2>
+	{% if failed %}
 
     <strong>Login failed!</strong> Check your credentials and try again.
 
-{% endif %}
+	{% endif %}
 
-<form class="form" action= "/login" method="POST">
+<form class="form" action= "/home" method="POST">
+  <formset>
 	<label for="username">Username</label>
 	<input type="text" value="{{ username }}" name="username"/>
 	<label for="password">Password</label>
 	<input type="password" name="password"/>
 	<button type="submit" class="btn">Login</button>
+  </formset>
 </form>
 
 <a href="/forgot">Forgot password</a>
-
+  </div>
+</div>
 
 {% endblock content %}

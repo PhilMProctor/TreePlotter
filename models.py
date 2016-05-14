@@ -3,8 +3,6 @@ from webapp2_extras import sessions
 from webapp2_extras import auth
 from webapp2_extras import security
 
-
-
 import webapp2_extras.appengine.auth.models
 from google.appengine.ext import blobstore
 from google.appengine.ext.webapp import blobstore_handlers

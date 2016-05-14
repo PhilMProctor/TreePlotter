@@ -9,20 +9,16 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <!--<link href="static/css/ghpage-materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
-  
-  {% block script %}
-  {% endblock script %}
-</head>
-<body>
- {% block nav %}
+  </head>
+  <body>
+  {% block nav %}
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="/" class="brand-logo">TreePlotter</a>
       <ul class="right hide-on-med-and-down">
         {% if username %}
         <li><a href="/plot">Plot A Tree</a></li>
-        <li><a href="/admin/settings">Settings</a></li>
+        <li><a href="#">Settings</a></li>
         <li><a href="/logout">Log Out</a></li>
         {% else %}
         <li><a href="/signup">Register</a></li>
@@ -44,25 +40,7 @@
     </div>
   </nav>
  {% endblock nav %}
-  
-{% block content %}
-{% endblock content %}
-
-{% block footer %}
-  <footer class="page-footer teal">
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="green-text text-lighten-3" href="#">Techno-Talk</a>
-      </div>
-    </div>
-  </footer>
-{%endblock footer%}
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="static/js/materialize.js"></script>
-  <script src="static/js/init.js"></script>
-
+    {% block content %}
+    {% endblock content %}
   </body>
 </html>

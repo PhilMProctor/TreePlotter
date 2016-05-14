@@ -1,9 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
+ 
 <div class="container">
-	<div class="row">
-			   <form class="col l6 m8 s12" action="" method="post">
+  <div class="row">
+    <div class="col s12 m9 l10">
+
+      <div id="introduction">
+        <h4>Introduction</h4>
+        <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div class="row">
+   
+			   <form class="col s12 m9 l10" action="" method="post" name="plot">
 						<div class="row">
 							<div class="input-field col s10">
 								<input name ="treeSpecies" id="treeSpecies" type="text" class="validate">
@@ -26,22 +50,49 @@
 							<textarea name ="treeDesc" id="treeDesc" class="materialize-textarea"></textarea>
 							</div>
 						</div>
-						<div class="row">
-							<div class="input-field">
-            					<div class="btn"><span>Leaf</span></div>
-            					<input type="file">
-          					</div>
-          				</div>
-						<div class="row">
-						<div class="input-field">
-            				<div class="btn"><span>Fruit</span></div>
-            					<input type="file">
-          					</div>
+              		<div class="row">
+							<div class="input-field col s10">
+                       <input name ="geoLat" id="geoLat" type="text" class="validate">
+								<label for="geoLat">Latitude</label>
+							</div>
+						</div>
+              		<div class="row">
+							<div class="input-field col s10">
+								<input name ="geoLng" id="geoLng" type="text" class="validate">
+								<label for="geoLng">Longitude</label>
+							</div>
 						</div>
 						<button class="btn waves-effect waves-light" type="submit" class="btn btn-success">Save 
 						<i class="material-icons">send</i>
 						</button>
-					</form>
+     </form>
 	</div>
 </div>
+
+{% block script %}
+<script>
+window.onload = function() {
+  var startPos;
+  var geoOptions = {
+    enableHighAccuracy: true
+  }
+
+  var geoSuccess = function(position) {
+    startPos = position;
+    document.getElementById('geoLat').value = startPos.coords.latitude;
+    document.getElementById('geoLng').value = startPos.coords.longitude;
+  };
+  var geoError = function(error) {
+    console.log('Error occurred. Error code: ' + error.code);
+    // error.code can be:
+    //   0: unknown error
+    //   1: permission denied
+    //   2: position unavailable (error response from location provider)
+    //   3: timed out
+  };
+
+  navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+};
+</script>
+{% endblock script %}
 {% endblock content %}

@@ -1,1 +1,1 @@
-{"mixinTypes":["contribution"],"builders":{"configs":{}},"runners":{"configs":{"project:/TreePlotter%20Basic":{"ram":500,"variables":{"configurationType":"python"},"options":{}}}},"type":"GAEPython","attributes":{"language":["python"]}}
+{"mixinTypes":["contribution"],"builders":{"configs":{}},"runners":{"configs":{"project:/TreePlotter%20500mb":{"ram":500,"variables":{"configurationType":"python"},"options":{}}}},"type":"GAEPython","attributes":{"language":["python"]}}

@@ -19,6 +19,9 @@ handlers:
   script: main.app
   secure: always
 
+- url: /home
+  script: main.app
+  
 - url: /login
   script: main.app
   secure: always

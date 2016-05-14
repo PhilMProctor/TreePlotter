@@ -27,14 +27,13 @@ def user_required(handler):
 	return check_login
 
 TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), 'views')
-#static_path = os.path.join(os.path.dirname(__file__), "static")
 jinja_environment = \
     jinja2.Environment(autoescape=True, extensions=['jinja2.ext.autoescape'], loader=jinja2.FileSystemLoader(TEMPLATE_DIR))
 
 class BaseHandler(webapp2.RequestHandler):
 	@webapp2.cached_property
 	def auth(self):
-		return	auth.get_auth()
+		return auth.get_auth()
 
 	@webapp2.cached_property
 	def user_info(self):
@@ -291,6 +290,14 @@ class PlotHandler(BaseHandler):
 		'param_item': param_item
 		}
 		self.render_template('plot.html', params)
+      
+class SettingsHandler(BaseHandler):
+	def get(self):
+		param_item ="tree"
+		params = {
+		'param_item': param_item
+		}
+		self.render_template('settings.html', params)
 
 class StatsHandler(BaseHandler):
 	def get(self):
@@ -308,8 +315,10 @@ app = webapp2.WSGIApplication([
 	webapp2.Route('/<type:v|p>/<user_id:\d+>-<signup_token:.+>',
       handler=VerificationHandler, name='verification'),
 	webapp2.Route('/authenticated', AuthenticatedHandler, name='authenticated'),
-	webapp2.Route('/', MainHandler, name='home'),
+   webapp2.Route('/', MainHandler, name='home'),
+   webapp2.Route('/home', MainHandler, name='home'),
 	webapp2.Route('/admin/species', SpeciesHandler, name='species'),
+   webapp2.Route('/admin/settings', SettingsHandler, name='settings'),
 	webapp2.Route('/stats', StatsHandler, name='stats'),
-	webapp2.Route('/plot', PlotHandler, name='plot')
+	webapp2.Route('/plot', PlotHandler, name='plot'),
 	], debug=True, config=config)

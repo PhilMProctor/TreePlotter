@@ -43,33 +43,31 @@ class User(webapp2_extras.appengine.auth.models.User):
 
 
 class qrRef(ndb.Model):
-	codeNum = ndb.StringProperty() # unique 4 digit alpha-numeric code
-	codeUrl = ndb.StringProperty() # link to tree details associated with QR code
-	codeAssigned = ndb.BooleanProperty()
-	date = ndb.DateTimeProperty(auto_now=True) # created, then modified date
+    codeNum = ndb.StringProperty() # unique 4 digit alpha-numeric code
+    codeUrl = ndb.StringProperty() # link to tree details associated with QR code
+    codeAssigned = ndb.BooleanProperty()
+    date = ndb.DateTimeProperty(auto_now=True) # created, then modified date
 
 class treeSpecies(ndb.Model):
-	speciesName = ndb.StringProperty()
-	treeType = ndb.StringProperty()
-	treeDesc = ndb.TextProperty()
-	leafPic = ndb.BlobProperty(default=None) # leaf image name
-	fruitPic = ndb.BlobProperty(default=None) # fruit image name
+    speciesName = ndb.StringProperty()
+    treeType = ndb.StringProperty()
+    treeDesc = ndb.TextProperty()
+    leafPic = ndb.BlobProperty(default=None) # leaf image name
+    fruitPic = ndb.BlobProperty(default=None) # fruit image name
+    barkPic = ndb.BlobProperty(default=None) # bark image name
 
 class treePlot(ndb.Model):
-	user = ndb.StringProperty()
-	cDate = ndb.DateTimeProperty(auto_now_add=True) # created date
-	mDate = ndb.DateTimeProperty(auto_now=True) # created, then modified date
-	treeSpecies = ndb.StringProperty()
-	treeCodeNum = ndb.StringProperty()
-	treeGeoLoc = ndb.GeoPtProperty() # lat log ref
-	treeLoc = ndb.StringProperty() # descriptive location e.g. private garden, park, street,
-	treeHeightM = ndb.IntegerProperty() # Height measured in metres
-	treeHeightR = ndb.StringProperty() # Representitve e.g. Bus Stop, House
-	treeWidth = ndb.IntegerProperty() # Width measured in centimetres
-	treeCondition = ndb.StringProperty(choices = ['Healthy', 'Damaged', 'Dying'])
-	treeAge = ndb.StringProperty(choices = ['Sapling', 'Full', 'Mature'])
-	treePic = ndb.BlobProperty(default=None) # link to picture
-	treeComment = ndb.TextProperty() # Free comment option
+    username = ndb.StringProperty()
+    cDate = ndb.DateTimeProperty(auto_now_add=True) # created date
+    mDate = ndb.DateTimeProperty(auto_now=True) # created, then modified date
+    treeSpecies = ndb.StringProperty()
+    treeDescription = ndb.StringProperty()
+    geoLat = ndb.FloatProperty() # Geo Lat
+    geoLng = ndb.FloatProperty() # Geo Lng
+    qrTagged = ndb.BooleanProperty()
+    treeCondition = ndb.StringProperty()
+    treeCircum = ndb.StringProperty() # centimetres
+    treeLocation = ndb.StringProperty() # descriptive location e.g. private garden, park, street
 
 
 

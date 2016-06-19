@@ -12,15 +12,9 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
-- url: .*
-  script: main.app
-
 - url: /admin/.*
   script: main.app
   secure: always
-
-- url: /home
-  script: main.app
   
 - url: /login
   script: main.app
@@ -29,6 +23,13 @@ handlers:
 - url: /signup
   script: main.app
   secure: always
+  
+- url: /forgot
+  script: main.app
+  secure: always
+  
+- url: .*
+  script: main.app
 
 libraries:
 - name: webapp2

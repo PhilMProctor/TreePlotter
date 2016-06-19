@@ -7,66 +7,75 @@
     <div class="col s12 m9 l10">
 
       <div id="introduction">
-        <h4>Introduction</h4>
-        <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-   
+  </div> 
   <div class="row">
-   
-			   <form class="col s12 m9 l10" action="" method="post" name="plot">
-						<div class="row">
+			   <form class="col s12 m8 l10" action="/plot" method="post" name="plot">
+              		<div class="row">
 							<div class="input-field col s10">
+								<input name ="username" id="username" type="hidden" value={{ username }}>
+							</div>
+						</div>
+						<div class="row">
+							<div classgernerte="input-field col s10">
 								<input name ="treeSpecies" id="treeSpecies" type="text" class="validate">
 								<label for="treeSpecies">Tree Species</label>
 							</div>
 						</div>
 						<div class="row">
-						<div class="input-field col s6">
-								<input name="treeType" type="radio" id="Deciduous" value="Deciduous" />
-								<label for="Deciduous">Deciduous</label>
-						</div>
-						<div class="input-field col s6">
-								<input name="treeType" type="radio" id="Evergreen" value="Evergreen" />
-								<label for="Evergreen">Evergreen</label>
-						</div>
-						</div>
-						<div class="row">
 							<div class="input-field col s10">
-							<label for="treeDesc">Description</label>
-							<textarea name ="treeDesc" id="treeDesc" class="materialize-textarea"></textarea>
+							<label for="treeDescription">Description</label>
+							<textarea name ="treeDescription" id="treeDescription" class="materialize-textarea"></textarea>
 							</div>
 						</div>
               		<div class="row">
 							<div class="input-field col s10">
-                       <input name ="geoLat" id="geoLat" type="text" class="validate">
+                       <input name ="geoLat" id="geoLat" type="number" step="any" class="validate">
 								<label for="geoLat">Latitude</label>
 							</div>
 						</div>
               		<div class="row">
 							<div class="input-field col s10">
-								<input name ="geoLng" id="geoLng" type="text" class="validate">
+								<input name ="geoLng" id="geoLng" type="number" step="any" class="validate">
 								<label for="geoLng">Longitude</label>
 							</div>
-						</div>
+              		</div>
+                    <div class="row">
+                      <div class="input-field col s10">
+                      <input type="checkbox" class="filled-in" id="qrTagged" checked="checked" />
+      						<label for="qrTagged">QR Tagged</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12 m6">
+                      <select class="browser-default" name="treeCondition">
+                        <option value="" disabled selected>Tree Condition</option>
+                        <option value='Healthy'>Healthy</option>
+                        <option value='Damaged'>Damaged</option>
+                        <option value='Dying'>Dying</option>
+                      </select>
+                    	</div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s3 m3">
+          					<input placeholder="centimetres" name="treeCircum" id="treeCircum" type="text" class="validate">
+          					<label for="treeCircum">Tree circumference</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s5 m5">
+                      <select class="browser-default" name="treeLocation">
+                        <option value="" disabled selected>Tree Location</option>
+                        <option value="Open Space">Open Space</option>
+                        <option value="Woodland">Woodland</option>
+                      </select>
+                    </div>
+                    </div>
 						<button class="btn waves-effect waves-light" type="submit" class="btn btn-success">Save 
 						<i class="material-icons">send</i>
 						</button>
-     </form>
-	</div>
+    </form>
 </div>
 
 {% block script %}

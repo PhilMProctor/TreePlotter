@@ -2,41 +2,94 @@
 {% block content %}
 <div class="container">
 	<div class="row">
+	<div class="col s12 m8">
 		<ul class="collapsible" data-collapsible="accordion">
 		    <li>
 			    <div class="collapsible-header"><i class="material-icons">library_add</i>Add a Species</div>
 			    <div class="collapsible-body">
-			    	<form class="col l6 m8 s12" action="" method="post">
+			    	<form action="" method="post">
 						<div class="row">
-							<div class="input-field col s10">
+							<div class="input-field col s10 m9 offset-m1">
 								<input name ="speciesName" id="speciesName" type="text" class="validate">
 								<label for="speciesName">Species Name</label>
 							</div>
 						</div>
 						<div class="row">
-						<div class="input-field col s6">
+							<div class="input-field col s10 m9 offset-m1">
+								<input name ="commonName" id="commonName" type="text" class="validate">
+								<label for="commonName">Common Name</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s10 m9 offset-m1">
+								<input name ="scientificName" id="scientificName" type="text" class="validate">
+								<label for="scientificName">Scientific Name</label>
+							</div>
+						</div>
+						<div class="row">
+						<div class="input-field col s10 m9 offset-m1">
+								<input name="ukProvenance" type="radio" id="Native" value="Native" />
+								<label for="Native">Native</label>
+						</div>
+						<div class="input-field col s10 m9 offset-m1">
+								<input name="ukProvenance" type="radio" id="Non-Native" value="Non-Native" />
+								<label for="Non-Native">Non-Native</label>
+						</div>
+						</div>
+						<div class="row">
+						<div class="input-field col s10 m9 offset-m1">
 								<input name="treeType" type="radio" id="Deciduous" value="Deciduous" />
 								<label for="Deciduous">Deciduous</label>
 						</div>
-						<div class="input-field col s6">
+						<div class="input-field col s10 m9 offset-m1">
 								<input name="treeType" type="radio" id="Evergreen" value="Evergreen" />
 								<label for="Evergreen">Evergreen</label>
 						</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s10">
-							<label for="treeDesc">Description</label>
-							<textarea name ="treeDesc" id="treeDesc" class="materialize-textarea"></textarea>
+							<div class="input-field col s10 m9 offset-m1">
+							<label for="treeFacts">Facts</label>
+							<textarea name ="treeFacts" id="treeFacts" class="materialize-textarea"></textarea>
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field">
+							<div class="input-field col s10 m9 offset-m1">
+							<label for="treeOverview">Overview</label>
+							<textarea name ="treeOverview" id="treeOverview" class="materialize-textarea"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s10 m9 offset-m1">
+							<label for="treeLeaves">Leaves</label>
+							<textarea name ="treeLeaves" id="treeLeaves" class="materialize-textarea"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s10 m9 offset-m1">
+							<label for="treeFlowers">Flowers</label>
+							<textarea name ="treeFlowers" id="treeFlowers" class="materialize-textarea"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s10 m9 offset-m1">
+							<label for="treeFruits">Fruit</label>
+							<textarea name ="treeFruits" id="treeFruits" class="materialize-textarea"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s10 m9 offset-m1">
+							<label for="treeMyth">Myths</label>
+							<textarea name ="treeMyth" id="treeMyth" class="materialize-textarea"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s10 m9 offset-m1">
             					<div class="btn"><span>Leaf</span></div>
             					<input type="file">
           					</div>
           				</div>
 						<div class="row">
-						<div class="input-field">
+						<div class="input-field col s10 m9 offset-m1">
             				<div class="btn"><span>Fruit</span></div>
             					<input type="file">
           					</div>
@@ -51,17 +104,14 @@
 				<div class="collapsible-header"><i class="material-icons">library_books</i>Tree Species</div>
 				<div class="collapsible-body">
 				{% for species in speciesList %}
-				<div class="col s8">
-				<div class="divider"></div>
-				{{species.speciesName}}
-				</div>
-				<div class="col s4">
-				<button>Edit</button>
-				</div>
+				    <div class="divider"></div>
+    				{{species.speciesName}}
+				<div><button>Edit</button></div>
 				{% endfor %}
 				</div>
 			</li>
 		</ul>
+		</div>
 	</div>
 </div>
 {% endblock content %}

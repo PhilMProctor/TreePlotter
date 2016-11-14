@@ -50,8 +50,16 @@ class qrRef(ndb.Model):
 
 class treeSpecies(ndb.Model):
     speciesName = ndb.StringProperty()
+    commonName = ndb.StringProperty()
+    scientificName = ndb.StringProperty()
+    ukProvenance = ndb.StringProperty()
     treeType = ndb.StringProperty()
-    treeDesc = ndb.TextProperty()
+    treeFacts = ndb.TextProperty()
+    treeOverview = ndb.TextProperty()
+    treeLeaves = ndb.TextProperty()
+    treeFlowers = ndb.TextProperty()
+    treeFruits = ndb.TextProperty()
+    treeMyth = ndb.TextProperty()
     leafPic = ndb.BlobProperty(default=None) # leaf image name
     fruitPic = ndb.BlobProperty(default=None) # fruit image name
     barkPic = ndb.BlobProperty(default=None) # bark image name

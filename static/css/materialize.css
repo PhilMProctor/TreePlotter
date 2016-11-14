@@ -8181,3 +8181,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-bottom: 5em;
   }
 }
+
+/*  ============================================
+    TreePlotter Extras
+    ============================================ */
+   .container img {
+  max-height: 70%;
+  max-width: 70%;
+}

@@ -276,10 +276,19 @@ class SpeciesHandler(BaseHandler):
 
 	def post(self):
 		tSpecies = treeSpecies(speciesName=self.request.get('speciesName'),
-		treeType=self.request.get('treeType'),
-		treeDesc=self.request.get('treeDesc'),
-		leafPic=self.request.get('leafPic'),
-		fruitPic=self.request.get('fruitPic'))
+		commonName = self.request.get('commonName'),
+		scientificName = self.request.get('scientificName'),
+		ukProvenance = self.request.get('ukProvenance'),
+		treeType = self.request.get('treeType'),
+		treeFacts = self.request.get('treeFacts'),
+		treeOverview = self.request.get('treeOverview'),
+		treeLeaves = self.request.get('treeLeaves'),
+		treeFlowers = self.request.get('treeFlowers'),
+		treeFruits = self.request.get('treeFruits'),
+		treeMyth = self.request.get('treeMyth'),
+		leafPic = self.request.get('leafPic'),
+		fruitPic = self.request.get('fruitPic'),
+		barkPic = self.request.get('barkPic'))
 		tSpecies.put()
 		return self.redirect('species')
 		
@@ -317,8 +326,8 @@ app = webapp2.WSGIApplication([
 	webapp2.Route('/authenticated', AuthenticatedHandler, name='authenticated'),
    webapp2.Route('/', MainHandler, name='home'),
    webapp2.Route('/home', MainHandler, name='home'),
-	webapp2.Route('/admin/species', SpeciesHandler, name='species'),
-   webapp2.Route('/admin/settings', SettingsHandler, name='settings'),
+	webapp2.Route('/species', SpeciesHandler, name='species'),
+   webapp2.Route('/settings', SettingsHandler, name='settings'),
 	webapp2.Route('/stats', StatsHandler, name='stats'),
 	webapp2.Route('/plot', PlotHandler, name='plot'),
 	], debug=True, config=config)
